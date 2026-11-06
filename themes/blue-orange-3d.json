@@ -1,0 +1,39 @@
+{
+  "name": "blue-orange-3d",
+  "label": "蓝橙立体",
+  "version": 1,
+  "author": "doc-to-ppt",
+  "description": "蓝橙学术的大屏版：投影更重、标题框圆角，放到投影仪上层次更明显。",
+  "tags": [
+    "文献汇报",
+    "大屏",
+    "答辩"
+  ],
+  "palette": {
+    "primary": "2F6DB5",
+    "dark": "0F3A75",
+    "accent": "E8961E",
+    "pale": "EEF3FA",
+    "pale2": "DCE6F4",
+    "mid": "C6D7EE",
+    "text": "1F2937",
+    "muted": "6B7280",
+    "gray": "A6ADB8",
+    "warm": "FFF4E5",
+    "warmEdge": "F6D7A7",
+    "line": "DCE3EC"
+  },
+  "fonts": {
+    "head": "Microsoft YaHei",
+    "body": "Microsoft YaHei"
+  },
+  "header": "slash",
+  "footer": "bar",
+  "nav": true,
+  "card": "strong",
+  "titleBox": "round",
+  "number": "circle",
+  "icon": "dot",
+  "emphasis": "accent",
+  "animation": "speech"
+}

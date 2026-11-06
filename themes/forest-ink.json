@@ -1,0 +1,39 @@
+{
+  "name": "forest-ink",
+  "label": "墨绿简约",
+  "version": 1,
+  "author": "doc-to-ppt",
+  "description": "墨绿主色配暗金强调，细线页眉、极简页脚、扁平浅底卡片和线性图标，画面最干净。",
+  "tags": [
+    "管理",
+    "社科",
+    "可持续发展"
+  ],
+  "palette": {
+    "primary": "2E6B57",
+    "dark": "173A30",
+    "accent": "C9962B",
+    "pale": "E7F0EC",
+    "pale2": "DCE9E3",
+    "mid": "BCD5CA",
+    "text": "1E2A26",
+    "muted": "66736E",
+    "gray": "9AA5A0",
+    "warm": "FBF5E6",
+    "warmEdge": "E9D6A6",
+    "line": "DCE3EC"
+  },
+  "fonts": {
+    "head": "Microsoft YaHei",
+    "body": "Microsoft YaHei"
+  },
+  "header": "line",
+  "footer": "min",
+  "nav": true,
+  "card": "flat",
+  "titleBox": "round",
+  "number": "circle",
+  "icon": "line",
+  "emphasis": "accent",
+  "animation": "standard"
+}

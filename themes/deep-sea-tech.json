@@ -1,0 +1,39 @@
+{
+  "name": "deep-sea-tech",
+  "label": "深海科技",
+  "version": 1,
+  "author": "doc-to-ppt",
+  "description": "深蓝主色配青绿强调，细线页眉、只描边卡片、方块编号和线性图标，适合工程与数据类主题。",
+  "tags": [
+    "工程",
+    "计算机",
+    "数据"
+  ],
+  "palette": {
+    "primary": "1F5FAE",
+    "dark": "0B2545",
+    "accent": "13A89E",
+    "pale": "E9F1FA",
+    "pale2": "D9E6F5",
+    "mid": "B9CDE8",
+    "text": "1B2430",
+    "muted": "5E6B7A",
+    "gray": "9AA6B5",
+    "warm": "E3F6F4",
+    "warmEdge": "A9DED8",
+    "line": "DCE3EC"
+  },
+  "fonts": {
+    "head": "Microsoft YaHei",
+    "body": "Microsoft YaHei"
+  },
+  "header": "line",
+  "footer": "bar",
+  "nav": true,
+  "card": "outline",
+  "titleBox": "pale",
+  "number": "square",
+  "icon": "line",
+  "emphasis": "accent",
+  "animation": "standard"
+}

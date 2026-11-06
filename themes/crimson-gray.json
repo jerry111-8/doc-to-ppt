@@ -1,0 +1,39 @@
+{
+  "name": "crimson-gray",
+  "label": "绛红稳重",
+  "version": 1,
+  "author": "doc-to-ppt",
+  "description": "绛红主色配深灰蓝强调，偏正式，适合校级展示和人文类主题。",
+  "tags": [
+    "正式汇报",
+    "人文",
+    "校级展示"
+  ],
+  "palette": {
+    "primary": "9E2A2B",
+    "dark": "5C1416",
+    "accent": "3D4A5C",
+    "pale": "F5E9E9",
+    "pale2": "EFDCDC",
+    "mid": "DDB9B9",
+    "text": "222222",
+    "muted": "666666",
+    "gray": "A9A3A3",
+    "warm": "EEF1F5",
+    "warmEdge": "C9D0DA",
+    "line": "DCE3EC"
+  },
+  "fonts": {
+    "head": "Microsoft YaHei",
+    "body": "Microsoft YaHei"
+  },
+  "header": "slash",
+  "footer": "bar",
+  "nav": true,
+  "card": "soft",
+  "titleBox": "solid",
+  "number": "circle",
+  "icon": "dot",
+  "emphasis": "accent",
+  "animation": "standard"
+}

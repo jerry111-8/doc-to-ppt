@@ -1,0 +1,27 @@
+[
+  {
+    "name": "academic-blue-orange",
+    "label": "蓝橙学术",
+    "file": "academic-blue-orange.json"
+  },
+  {
+    "name": "blue-orange-3d",
+    "label": "蓝橙立体",
+    "file": "blue-orange-3d.json"
+  },
+  {
+    "name": "forest-ink",
+    "label": "墨绿简约",
+    "file": "forest-ink.json"
+  },
+  {
+    "name": "crimson-gray",
+    "label": "绛红稳重",
+    "file": "crimson-gray.json"
+  },
+  {
+    "name": "deep-sea-tech",
+    "label": "深海科技",
+    "file": "deep-sea-tech.json"
+  }
+]

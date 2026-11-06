@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>doc-to-ppt · 可视化汇报 PPT 工具</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">▮▮</span> doc-to-ppt <small>论文 / 方案 → 中文汇报 PPT</small></div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="gallery" class="on">模板库</button>
+    <button data-tab="layouts">版式库</button>
+    <button data-tab="config">配置风格</button>
+    <button data-tab="deck">预览与导出</button>
+    <button data-tab="help">使用说明</button>
+  </nav>
+  <div class="cur">当前风格：<b id="curStyle">—</b></div>
+</header>
+
+<main>
+  <!-- 模板库 -->
+  <section id="tab-gallery" class="tab on">
+    <div class="bar">
+      <h2>模板库 <small id="themeCount"></small></h2>
+      <div class="actions">
+        <label class="btn">导入模板 JSON<input type="file" id="importTheme" accept=".json" hidden></label>
+        <a class="btn ghost" id="submitTheme" target="_blank" rel="noopener">提交到公开模板库</a>
+      </div>
+    </div>
+    <p class="hint">每个模板都用同一份示例内容渲染，方便对比。点“用这套风格”后，可以在“配置风格”里继续混搭。导入的模板只保存在你这台电脑的浏览器里。</p>
+    <div class="grid" id="themeGrid"></div>
+  </section>
+
+  <!-- 版式库 -->
+  <section id="tab-layouts" class="tab">
+    <div class="bar"><h2>版式库 <small id="layoutCount"></small></h2></div>
+    <p class="hint">用当前风格渲染。写 deck.json 时，每页的 <code>layout</code> 填这里的 id；字段说明就是 AI 需要填的内容。</p>
+    <div class="grid" id="layoutGrid"></div>
+  </section>
+
+  <!-- 配置风格 -->
+  <section id="tab-config" class="tab">
+    <div class="split">
+      <aside class="panel" id="configPanel"></aside>
+      <div class="previewCol">
+        <div class="bar">
+          <h2>实时预览</h2>
+          <div class="actions">
+            <button class="btn" id="saveTheme">保存为我的模板</button>
+            <button class="btn" id="dlStyle">下载 style.json</button>
+            <button class="btn primary" id="showPrompt">复制给 AI 的提示词</button>
+          </div>
+        </div>
+        <div id="configPreview" class="stack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 预览与导出 -->
+  <section id="tab-deck" class="tab">
+    <div class="bar">
+      <h2>预览与导出 <small id="deckInfo"></small></h2>
+      <div class="actions">
+        <label class="btn">导入 deck.json<input type="file" id="importDeck" accept=".json" hidden></label>
+        <button class="btn" id="pasteDeck">粘贴 AI 的回复</button>
+        <button class="btn ghost" id="loadSample">载入示例</button>
+        <button class="btn" id="dlDeck">下载 deck.json</button>
+        <button class="btn primary" id="exportPptx">导出 PPTX</button>
+      </div>
+    </div>
+    <div class="deckWrap">
+      <div class="thumbs" id="thumbs"></div>
+      <div class="editor">
+        <div id="bigPreview" class="big"></div>
+        <div class="edRow">
+          <label>版式 <select id="edLayout"></select></label>
+          <button class="btn sm" id="edUp">上移</button>
+          <button class="btn sm" id="edDown">下移</button>
+          <button class="btn sm" id="edDup">复制本页</button>
+          <button class="btn sm" id="edDel">删除本页</button>
+          <button class="btn sm" id="edAdd">在后面插入新页</button>
+          <button class="btn sm ghost" id="edMeta">编辑封面信息（meta）</button>
+          <span id="edMsg" class="msg"></span>
+        </div>
+        <div class="edGrid">
+          <label>本页内容（JSON，改完自动刷新预览）<textarea id="edJson" spellcheck="false"></textarea></label>
+          <label>讲稿 notes<textarea id="edNotes"></textarea></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用说明 -->
+  <section id="tab-help" class="tab">
+    <div class="help">
+      <h2>三步做完一份汇报 PPT</h2>
+      <ol class="steps">
+        <li><b>选风格</b>：在“模板库”挑一套，或在“配置风格”里点选页眉、卡片、编号、动画等组件。</li>
+        <li><b>让任意 AI 写内容</b>：点“复制给 AI 的提示词”，连同你的论文一起发给 Claude、ChatGPT、Kimi 等。AI 先给你看主线和分镜表，确认后输出 deck.json。</li>
+        <li><b>预览、改字、导出</b>：在“预览与导出”粘贴 AI 的回复（会自动提取 JSON），逐页检查、改字、换版式，最后点“导出 PPTX”。</li>
+      </ol>
+      <h3>交付前建议做一次独立审查</h3>
+      <p>开一个新的 AI 对话，上传原文和 deck.json，粘贴仓库里的 <a href="prompts/review.md" target="_blank">prompts/review.md</a>。让一个没写过这份内容的 AI 逐条对照原文核查数字、引用和前后一致性。</p>
+      <h3>Claude 用户</h3>
+      <p>可以直接安装 <a href="skill/SKILL.md" target="_blank">skill/SKILL.md</a>，用点选式对话完成全流程（主线 → 风格 → 组件 → 分镜 → 生成 → 独立审查）。</p>
+      <h3>隐私</h3>
+      <p>这个网页没有服务器：你的模板、deck.json 和导出的 PPT 都只在本机浏览器里处理。导入的模板和最近一次的 deck 会存在浏览器的本地存储中，清除浏览器数据就会删除。</p>
+      <h3>字体与预览</h3>
+      <p>预览用你电脑上已有的中文字体显示。导出的 PPT 默认使用微软雅黑，在没有这个字体的电脑上会被替换。动画只有在 PowerPoint 或 WPS 里放映时才能看到。</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="box">
+    <div class="mHead"><b id="mTitle"></b><button class="btn sm ghost" id="mClose">关闭</button></div>
+    <div id="mBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="lib/pptxgen.bundle.js"></script>
+<script src="engine/icons.js"></script>
+<script src="engine/doc2ppt.js"></script>
+<script src="themes/themes.js"></script>
+<script src="examples/example.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

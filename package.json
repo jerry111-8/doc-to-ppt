@@ -1,0 +1,14 @@
+{
+  "name": "doc-to-ppt",
+  "version": "0.2.0",
+  "description": "把论文、方案做成中文汇报 PPT：可视化选风格、任意 AI 写内容、一键导出 .pptx",
+  "license": "MIT",
+  "main": "engine/doc2ppt.js",
+  "bin": { "doc2ppt": "engine/cli.js" },
+  "scripts": {
+    "build": "node engine/cli.js examples/deck.example.json academic-blue-orange examples/example.pptx",
+    "themes": "node tools/build-themes.js",
+    "prompts": "node tools/build-prompts.js"
+  },
+  "dependencies": { "jszip": "^3.10.1", "pptxgenjs": "^4.0.1", "sharp": "^0.33.0" }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "academic-blue-orange",
+  "label": "蓝橙学术",
+  "version": 1,
+  "author": "doc-to-ppt",
+  "description": "一种主蓝加橙色强调，斜杠色块页眉、灰色页脚条、白卡柔和投影。配色源自一份工程项目汇报，层次清楚、不压抑。",
+  "tags": [
+    "文献汇报",
+    "开题答辩",
+    "课程汇报",
+    "默认"
+  ],
+  "palette": {
+    "primary": "2F6DB5",
+    "dark": "0F3A75",
+    "accent": "E8961E",
+    "pale": "EEF3FA",
+    "pale2": "DCE6F4",
+    "mid": "C6D7EE",
+    "text": "1F2937",
+    "muted": "6B7280",
+    "gray": "A6ADB8",
+    "warm": "FFF4E5",
+    "warmEdge": "F6D7A7",
+    "line": "DCE3EC"
+  },
+  "fonts": {
+    "head": "Microsoft YaHei",
+    "body": "Microsoft YaHei"
+  },
+  "header": "slash",
+  "footer": "bar",
+  "nav": true,
+  "card": "soft",
+  "titleBox": "solid",
+  "number": "circle",
+  "icon": "dot",
+  "emphasis": "accent",
+  "animation": "standard"
+}

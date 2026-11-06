@@ -1,0 +1,28 @@
+name: 提交新模板
+description: 把你做好的风格（style.json）提交到公开模板库
+title: "[模板] "
+labels: ["theme"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        在网页的“配置风格”里点“下载 style.json”，把文件内容粘贴到下面。
+        请不要提交学校校徽、单位标志、他人照片或别人 PPT 的截图，只提交配色和组件规格。
+  - type: input
+    id: label
+    attributes: { label: 模板名称, placeholder: "例如：青灰极简" }
+    validations: { required: true }
+  - type: input
+    id: tags
+    attributes: { label: 适合场景, placeholder: "例如：答辩、工程、数据" }
+  - type: textarea
+    id: style
+    attributes: { label: style.json 内容, render: json }
+    validations: { required: true }
+  - type: checkboxes
+    id: ok
+    attributes:
+      label: 确认
+      options:
+        - label: 这份模板不包含校徽、商标、照片或他人作品的截图
+          required: true
